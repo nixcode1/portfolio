@@ -1,23 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { motion } from "framer-motion";
+import SkillsList from './components/SkillsList';
+
+let frontendSkills = ["Html", "Css", "Javascript", "Vue", "React"];
+let mobileSkills = ["Flutter"];
+let backendSkills = ["Nodejs", "Django"]
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div style={{ display: "flex", paddingTop: "5%" }}>
+        <motion.div animate={{ x: "100%"}} transition={{ duration: 1}}>
+            <div className='heading'>Hey, I'm Amaechi Precious </div>
+            <div className='heading'>and I'm a software developer</div>
+        </motion.div>
+      </div>
+      <div>
+        I make cross-platform mobile apps and web applications[backend and frontend]
+      </div>
+
+      <div>
+        Skills
+      </div>
+      <SkillsList title="Mobile Development" skillsList={mobileSkills}/>
+      <SkillsList title="Frontend Development" skillsList={frontendSkills}/>
+      <SkillsList title="Backend Development" skillsList={backendSkills}/>
+      {/* <div>
+        Frontend
+        <ul>
+          {frontendSkills.map(skills => <li>{skills}</li>)}
+        </ul>
+      </div> */}
     </div>
   );
 }
